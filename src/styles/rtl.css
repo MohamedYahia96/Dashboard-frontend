@@ -1,0 +1,6 @@
+[dir="rtl"] .sidebar { border-right: none; border-left: 1px solid var(--border-color); }
+[dir="rtl"] .main-content { margin-left: 0; margin-right: var(--sidebar-width); }
+[dir="rtl"] .search-icon { left: auto; right: 14px; }
+[dir="rtl"] .search-input { padding-left: 16px; padding-right: 44px; }
+[dir="rtl"] .notification-dropdown { right: auto; left: 0; }
+[dir="rtl"] .sidebar-link svg:last-child { margin-left: 0; margin-right: auto; }

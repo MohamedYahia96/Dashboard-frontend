@@ -1,0 +1,71 @@
+{
+  "app": { "title": "لوحة المهام", "subtitle": "إدارة مهامك الشخصية" },
+  "auth": {
+    "login": "تسجيل الدخول", "register": "إنشاء حساب", "email": "البريد الإلكتروني",
+    "password": "كلمة المرور", "fullName": "الاسم الكامل", "confirmPassword": "تأكيد كلمة المرور",
+    "noAccount": "ليس لديك حساب؟", "hasAccount": "لديك حساب بالفعل؟",
+    "loginSuccess": "تم تسجيل الدخول بنجاح", "registerSuccess": "تم التسجيل بنجاح",
+    "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة"
+  },
+  "sidebar": {
+    "dashboard": "الرئيسية", "courses": "الكورسات", "entertainment": "الترفيه والرياضة",
+    "studySessions": "جلسات المذاكرة", "socialMedia": "مواقع السوشيال", "music": "الموسيقى",
+    "aiTools": "أدوات الذكاء الاصطناعي", "academic": "الدراسة الأكاديمية",
+    "calendar": "المواعيد والتقويم", "stickyNotes": "الملاحظات اللاصقة", "adminPanel": "لوحة الإدارة", "reports": "التقارير",
+    "activityLog": "سجل النشاط", "profile": "إعدادات الملف الشخصي", "logout": "تسجيل الخروج"
+  },
+  "dashboard": {
+    "welcome": "مرحباً بعودتك", "totalTasks": "إجمالي المهام", "completed": "مكتملة",
+    "inProgress": "قيد التنفيذ", "overdue": "متأخرة", "recentActivity": "آخر النشاطات",
+    "weeklyOverview": "نظرة أسبوعية", "noTasks": "لا توجد مهام بعد"
+  },
+  "tasks": {
+    "addTask": "إضافة مهمة", "editTask": "تعديل مهمة", "deleteTask": "حذف مهمة",
+    "title": "العنوان", "description": "الوصف", "status": "الحالة", "priority": "الأولوية",
+    "dueDate": "تاريخ الاستحقاق", "progress": "التقدم", "tags": "التصنيفات", "pin": "تثبيت",
+    "unpin": "إلغاء التثبيت", "todo": "للتنفيذ", "inProgress": "قيد التنفيذ", "done": "مكتملة",
+    "low": "منخفضة", "medium": "متوسطة", "high": "عالية", "search": "البحث في المهام...",
+    "noResults": "لا توجد مهام", "listView": "عرض القائمة", "kanbanView": "عرض كانبان",
+    "recurring": "متكررة", "daily": "يومياً", "weekly": "أسبوعياً", "monthly": "شهرياً",
+    "none": "بدون", "confirmDelete": "هل أنت متأكد من حذف هذه المهمة؟"
+  },
+  "pomodoro": {
+    "title": "مؤقت بومودورو", "focus": "تركيز", "break": "استراحة", "start": "بدء",
+    "pause": "إيقاف", "reset": "إعادة تعيين", "sessions": "جلسات مكتملة"
+  },
+  "notifications": {
+    "title": "الإشعارات", "markRead": "تحديد كمقروء", "markAllRead": "تحديد الكل كمقروء",
+    "noNotifications": "لا توجد إشعارات"
+  },
+  "profile": {
+    "title": "إعدادات الملف الشخصي", "changeName": "تغيير الاسم",
+    "changePassword": "تغيير كلمة المرور", "currentPassword": "كلمة المرور الحالية",
+    "newPassword": "كلمة المرور الجديدة", "language": "اللغة", "theme": "المظهر",
+    "save": "حفظ", "saved": "تم الحفظ بنجاح"
+  },
+  "admin": {
+    "title": "لوحة الإدارة", "users": "المستخدمون", "role": "الدور",
+    "changeRole": "تغيير الدور", "deleteUser": "حذف المستخدم",
+    "confirmDeleteUser": "هل أنت متأكد من حذف هذا المستخدم؟"
+  },
+  "export": { "csv": "تصدير CSV", "pdf": "تصدير PDF" },
+  "reports": {
+    "title": "التقارير", "completionRate": "نسبة الإنجاز", "dateRange": "نطاق التاريخ",
+    "from": "من", "to": "إلى", "categoryStats": "إحصائيات الأقسام",
+    "dailyActivity": "النشاط اليومي"
+  },
+  "common": {
+    "save": "حفظ", "cancel": "إلغاء", "delete": "حذف", "edit": "تعديل", "add": "إضافة",
+    "close": "إغلاق", "confirm": "تأكيد", "yes": "نعم", "no": "لا", "loading": "جاري التحميل...",
+    "error": "حدث خطأ ما", "success": "تم بنجاح", "search": "بحث...",
+    "noData": "لا توجد بيانات", "light": "فاتح", "dark": "غامق"
+  },
+  "onboarding": {
+    "welcome": "مرحباً بك في لوحة المهام!",
+    "step1": "هذه هي الصفحة الرئيسية مع الإحصائيات والرسوم البيانية",
+    "step2": "استخدم الشريط الجانبي للتنقل بين الأقسام",
+    "step3": "غيّر المظهر واللغة من الشريط العلوي",
+    "step4": "أنت جاهز! ابدأ بإضافة مهامك",
+    "next": "التالي", "skip": "تخطي", "finish": "ابدأ الآن"
+  }
+}
