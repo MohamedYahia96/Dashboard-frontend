@@ -7,12 +7,13 @@ import DashboardLayout from './components/layout/DashboardLayout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import { Entertainment, SocialMedia, AiTools, Academic, CalendarPage } from './pages/Sections';
+import { Entertainment, SocialMedia, AiTools, Academic } from './pages/Sections';
 import CoursesHub from './pages/CoursesHub';
 import CourseTrackPage from './pages/CourseTrackPage';
 import MusicPage from './pages/MusicPage';
 import StudySessions from './pages/StudySessions';
 import StickyNotes from './pages/StickyNotes';
+import Calendar from './pages/Calendar';
 import { StudySessionProvider } from './contexts/StudySessionContext';
 import AdminPanel from './pages/AdminPanel';
 import ProfileSettings from './pages/ProfileSettings';
@@ -50,7 +51,7 @@ export default function App() {
                   <Route path="music" element={<MusicPage />} />
                   <Route path="ai-tools" element={<AiTools />} />
                   <Route path="academic" element={<Academic />} />
-                  <Route path="calendar" element={<CalendarPage />} />
+                  <Route path="calendar" element={<Calendar />} />
                   <Route path="sticky-notes" element={<StickyNotes />} />
 
                   {/* Utility Pages */}
