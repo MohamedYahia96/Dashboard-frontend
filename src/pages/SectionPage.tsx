@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import api from '../services/api';
-import { Plus, Pin, Trash2, GripVertical, LayoutList, Columns, X, AlertCircle } from 'lucide-react';
+import { Plus, Pin, Trash2, GripVertical, LayoutList, Columns, X, AlertCircle, Edit2 } from 'lucide-react';
 import { useToast } from '../hooks/useUtils';
 
 interface Task {
@@ -35,12 +35,29 @@ export default function SectionPage({ categoryId }: SectionPageProps) {
 
   const handleCreate = async () => {
     try {
-      await api.post('/tasks', { ...form, categoryId });
+      if (editTask) {
+        await api.put(`/tasks/${editTask.id}`, { ...form, categoryId });
+      } else {
+        await api.post('/tasks', { ...form, categoryId });
+      }
       addToast(t('common.success'), 'success');
       setShowModal(false);
       setForm({ title: '', description: '', priority: 'Medium', dueDate: '', recurrenceType: 'None' });
+      setEditTask(null);
       fetchTasks();
     } catch { addToast(t('common.error'), 'error'); }
+  };
+
+  const handleEditClick = (task: Task) => {
+    setEditTask(task);
+    setForm({
+      title: task.title,
+      description: task.description || '',
+      priority: task.priority || 'Medium',
+      dueDate: task.dueDate ? task.dueDate.split('T')[0] : '',
+      recurrenceType: 'None'
+    });
+    setShowModal(true);
   };
 
   const handleUpdate = async (id: number, data: any) => {
@@ -156,13 +173,18 @@ export default function SectionPage({ categoryId }: SectionPageProps) {
                         </div>
                       )}
                     </div>
-                    <div style={{ display: 'flex', gap: 4, marginTop: 8 }}>
+                    <div style={{ display: 'flex', gap: 4, marginTop: 8, alignItems: 'center', flexWrap: 'wrap' }}>
                       {kanbanStatuses.filter(s => s !== status).map(s => (
-                        <button key={s} onClick={() => handleUpdate(task.id, { status: s })} style={{
+                        <button key={s} onClick={(e) => { e.stopPropagation(); handleUpdate(task.id, { status: s }); }} style={{
                           fontSize: 10, padding: '3px 8px', borderRadius: 5, cursor: 'pointer',
                           background: 'var(--bg-tertiary)', color: 'var(--text-secondary)', border: 'none',
                         }}>→ {s}</button>
                       ))}
+                      <div style={{ marginLeft: 'auto', display: 'flex', gap: 4 }}>
+                        <button onClick={(e) => { e.stopPropagation(); handleEditClick(task); }} style={{ padding: 4, borderRadius: 4, background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-tertiary)' }}><Edit2 size={13} /></button>
+                        <button onClick={(e) => { e.stopPropagation(); togglePin(task.id); }} style={{ padding: 4, borderRadius: 4, background: task.isPinned ? 'var(--accent-primary-bg)' : 'transparent', border: 'none', cursor: 'pointer', color: task.isPinned ? 'var(--accent-primary)' : 'var(--text-tertiary)' }}><Pin size={13} /></button>
+                        <button onClick={(e) => { e.stopPropagation(); setConfirmDelete(task.id); }} style={{ padding: 4, borderRadius: 4, background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-tertiary)' }}><Trash2 size={13} /></button>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -264,6 +286,9 @@ export default function SectionPage({ categoryId }: SectionPageProps) {
           )}
         </div>
         <div style={{ display: 'flex', gap: 6 }}>
+          <button onClick={() => handleEditClick(task)} style={{ padding: 6, borderRadius: 6, background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-tertiary)' }}>
+            <Edit2 size={15} />
+          </button>
           <button onClick={() => togglePin(task.id)} style={{ padding: 6, borderRadius: 6, background: task.isPinned ? 'var(--accent-primary-bg)' : 'transparent', border: 'none', cursor: 'pointer', color: task.isPinned ? 'var(--accent-primary)' : 'var(--text-tertiary)' }}>
             <Pin size={15} />
           </button>

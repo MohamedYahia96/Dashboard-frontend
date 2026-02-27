@@ -10,15 +10,17 @@ import {
 
 const navItems = [
   { path: '/dashboard', icon: LayoutDashboard, key: 'dashboard' },
-  { path: '/courses', icon: GraduationCap, key: 'courses' },
-  { path: '/entertainment', icon: Gamepad2, key: 'entertainment' },
-  { path: '/study-sessions', icon: BookOpen, key: 'studySessions' },
-  { path: '/social-media', icon: Share2, key: 'socialMedia' },
-  { path: '/music', icon: Music, key: 'music' },
-  { path: '/ai-tools', icon: Bot, key: 'aiTools' },
-  { path: '/academic', icon: School, key: 'academic' },
-  { path: '/calendar', icon: Calendar, key: 'calendar' },
+
   { path: '/sticky-notes', icon: StickyNote, key: 'stickyNotes' },
+  { path: '/study-sessions', icon: BookOpen, key: 'studySessions' },
+  { path: '/courses', icon: GraduationCap, key: 'courses' },
+  { path: '/academic', icon: School, key: 'academic' },
+  { path: '/music', icon: Music, key: 'music' },
+  { path: '/entertainment', icon: Gamepad2, key: 'entertainment' },
+  { path: '/social-media', icon: Share2, key: 'socialMedia' },
+  { path: '/calendar', icon: Calendar, key: 'calendar' },
+  { path: '/ai-tools', icon: Bot, key: 'aiTools' },
+  
 ];
 
 const bottomItems = [
